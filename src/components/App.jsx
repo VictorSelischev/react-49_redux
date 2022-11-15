@@ -1,5 +1,10 @@
 import { Layout } from './Layout/Layout';
+import { AppBar } from './AppBar/AppBar';
 
 export const App = () => {
-  return <Layout>React homework template</Layout>;
+  return (
+    <Layout>
+      <AppBar />
+    </Layout>
+  );
 };
