@@ -9,17 +9,17 @@
   color: inherit;
 }
 
-btn.isSelected {
+.btn.isSelected {
   background-color: #1976d2;
   color: #fff;
 }
 
-btn:hover {
+.btn:hover {
   background-color: #1976d2;
   color: #fff;
 }
 
-btn:active {
+.btn:active {
   background-color: #1565c0;
   color: #fff;
 }
