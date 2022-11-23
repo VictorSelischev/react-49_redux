@@ -28,6 +28,6 @@ export const toggleCompleted = taskId => {
 export const setStatusFilter = value => {
   return {
     type: 'filters/setStatusFilter',
-    payload: 'Filter value',
+    payload: value,
   };
 };

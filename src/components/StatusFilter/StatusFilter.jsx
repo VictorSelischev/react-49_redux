@@ -1,9 +1,10 @@
 import { Button } from 'components/Button/Button';
-import css from './StatusFilter.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { statusFilters } from 'redux/constants';
 import { getStatusFilter } from '../../redux/selectors';
 import { setStatusFilter } from 'redux/actions';
+import { statusFilters } from 'redux/constants';
+import css from './StatusFilter.module.css';
+
 
 export const StatusFilter = () => {
   const filter = useSelector(getStatusFilter);
