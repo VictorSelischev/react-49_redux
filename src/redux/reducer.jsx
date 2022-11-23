@@ -1,5 +1,10 @@
 import { statusFilters } from './constants';
-import { addTask, deleteTask, toggleCompleted } from './actions';
+import {
+  addTask,
+  deleteTask,
+  toggleCompleted,
+  setStatusFilter,
+} from './actions';
 // import { combineReducers } from 'redux';
 
 const tasksInitialState = [
@@ -38,7 +43,7 @@ const filtersInitialState = {
 
 export const filtersReducer = (state = filtersInitialState, action) => {
   switch (action.type) {
-    case 'filters/setStatusFilter':
+    case setStatusFilter.type:
       return { ...state, status: action.payload };
     default:
       return state;
