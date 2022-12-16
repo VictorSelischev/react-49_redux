@@ -9,12 +9,12 @@ import { TaskForm } from './TaskForm/TaskForm';
 import { TaskList } from './TaskList/TaskList';
 
 export const App = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   // const { items, isLoading, error } = useSelector(getTasks);
 
-  // useEffect(() => {
-  //   dispatch(fetchTasks());
-  //  }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchTasks());
+   }, [dispatch]);
 
   return (
     <Layout>
