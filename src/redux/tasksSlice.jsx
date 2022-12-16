@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 // import { nanoid } from 'nanoid';
 
-import { fetchTasks } from './operations';
+import { fetchTasks, addTask } from './operations';
 
 // const tasksInitialState = [
 //   { id: 0, text: 'Learn HTML and CSS', completed: true },
@@ -27,6 +27,19 @@ const tasksSlice = createSlice({
       state.error = null;
     },
     [fetchTasks.rejected](state, action) { 
+      state.isLoading = false;
+      state.error = action.payload;
+    },
+
+    [addTask.pending](state) { 
+      state.isLoader = true;
+     },
+    [addTask.fulfilled](state, action) { 
+      state.isLoading = false;
+      state.error = null;
+      state.items.push(action.payload);
+    },
+    [addTask.rejected](state, action) {
       state.isLoading = false;
       state.error = action.payload;
     },
