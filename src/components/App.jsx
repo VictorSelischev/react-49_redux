@@ -9,24 +9,24 @@ import { TaskForm } from './TaskForm/TaskForm';
 import { TaskList } from './TaskList/TaskList';
 
 export const App = () => {
-  const dispatch = useDispatch();
-  const { items, isLoading, error } = useSelector(getTasks);
+  // const dispatch = useDispatch();
+  // const { items, isLoading, error } = useSelector(getTasks);
 
-  useEffect(() => {
-    dispatch(fetchTasks());
-   }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchTasks());
+  //  }, [dispatch]);
 
   return (
-    // <Layout>
-    //   <AppBar />
-    //   <TaskForm />
-    //   <TaskList />
-    // </Layout>
+    <Layout>
+      <AppBar />
+      <TaskForm />
+      <TaskList />
+    </Layout>
 
-    <div>
-      {isLoading && <p>Loading tasks...</p>}
-      {error && <p>{error}</p>}
-      <p>{items.length > 0 && JSON.stringify(items, null, 2)}</p>
-    </div>
+    // <div>
+    //   {isLoading && <p>Loading tasks...</p>}
+    //   {error && <p>{error}</p>}
+    //   <p>{items.length > 0 && JSON.stringify(items, null, 2)}</p>
+    // </div>
   );
 };

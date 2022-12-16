@@ -47,7 +47,7 @@ const tasksSlice = createSlice({
   // },
 });
 
-export const { fetchingInProgress, fetchingSuccess, fetchingError } = tasksSlice.actions;
+// export const { fetchingInProgress, fetchingSuccess, fetchingError } = tasksSlice.actions;
 
 // const tasksSlice = createSlice({
 //   name: 'tasks',
