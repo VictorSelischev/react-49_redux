@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 // import { nanoid } from 'nanoid';
 
-import { fetchTasks, addTask, deleteTask } from './operations';
+import { fetchTasks, addTask, deleteTask, toggleCompleted } from './operations';
 
 // const tasksInitialState = [
 //   { id: 0, text: 'Learn HTML and CSS', completed: true },
@@ -51,9 +51,23 @@ const tasksSlice = createSlice({
       state.isLoading = false;
       state.error = null;
       const index = state.items.findIndex(task => task.id === action.payload.id);
-      state.items.slice(index, 1);
+      state.items.splice(index, 1);
     },
     [deleteTask.rejected](state, action) { 
+      state.isLoading = false;
+      state.error = action.payload;
+    },
+
+    [toggleCompleted.pending](state) { 
+      state.isLoading = true;
+    },
+    [toggleCompleted.fulfilled](state, action) {
+      state.isLoading = false;
+      state.error = null;
+      const index = state.items.findIndex(task => task.id === action.payload.id);
+      state.items.splice(index, 1, action.payload);
+     },
+    [toggleCompleted.rejected](state, action) { 
       state.isLoading = false;
       state.error = action.payload;
     },
