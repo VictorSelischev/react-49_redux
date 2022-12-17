@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 // import { nanoid } from 'nanoid';
 
-import { fetchTasks, addTask } from './operations';
+import { fetchTasks, addTask, deleteTask } from './operations';
 
 // const tasksInitialState = [
 //   { id: 0, text: 'Learn HTML and CSS', completed: true },
@@ -40,6 +40,20 @@ const tasksSlice = createSlice({
       state.items.push(action.payload);
     },
     [addTask.rejected](state, action) {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
+
+    [deleteTask.pending](state) { 
+      state.isLoading = true;
+    },
+    [deleteTask.fulfilled](state, action) { 
+      state.isLoading = false;
+      state.error = null;
+      const index = state.items.findIndex(task => task.id === action.payload.id);
+      state.items.slice(index, 1);
+    },
+    [deleteTask.rejected](state, action) { 
       state.isLoading = false;
       state.error = action.payload;
     },
