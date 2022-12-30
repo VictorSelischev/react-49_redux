@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 
 import { Layout } from './Layout/Layout';
-import { NotFound } from 'pages/NotFound';
+// import { NotFound } from 'pages/NotFound';
 
 import { fetchTasks } from 'redux/operations';
 import { selectTasks } from 'redux/selectors';
@@ -20,6 +20,7 @@ const HomePage = lazy(() => import('../pages/Home'));
 const LoginPage = lazy(() => import('../pages/Login'));
 const RegisterPage = lazy(() => import('../pages/Register'));
 const TasksPage = lazy(() => import('../pages/Tasks'));
+const NotFoundPage = lazy(() => import('../pages/NotFound'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ export const App = () => {
         <Route />
         <Route />
       </Route>
-      <Route path='*' element={<NotFound/>} />
+      <Route path='*' element={<NotFoundPage/>} />
     </Routes>
 
     // <Layout>
