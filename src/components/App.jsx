@@ -45,7 +45,7 @@ export const App = () => {
 
 <div>
       <nav>
-        <StyledLink to='/' end >Home</StyledLink>
+        <StyledLink to='/home' end >Home</StyledLink>
         <StyledLink to='/tasks' >Tasks</StyledLink>
         <StyledLink to='/register' end >Register</StyledLink>
         <StyledLink to='/login' end >Login</StyledLink>
