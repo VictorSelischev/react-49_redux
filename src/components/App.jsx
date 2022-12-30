@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 
 import { Layout } from './Layout/Layout';
+import { NotFound } from 'pages/NotFound';
 
 import { fetchTasks } from 'redux/operations';
 import { selectTasks } from 'redux/selectors';
@@ -38,6 +39,7 @@ export const App = () => {
         <Route />
         <Route />
       </Route>
+      <Route path='*' element={<NotFound/>} />
     </Routes>
 
     // <Layout>
