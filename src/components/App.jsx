@@ -13,7 +13,12 @@ import { AppBar } from './AppBar/AppBar';
 import { TaskForm } from './TaskForm/TaskForm';
 import { TaskList } from './TaskList/TaskList';
 
-// const MyComponent = lazy(() => import('path/to/MyComponent'));
+
+
+const HomePage = lazy(() => import('../pages/Home'));
+const LoginPage = lazy(() => import('../pages/Login'));
+const RegisterPage = lazy(() => import('../pages/Register'));
+const TasksPage = lazy(() => import('../pages/Tasks'));
 
 export const App = () => {
   const dispatch = useDispatch();
