@@ -1,13 +1,7 @@
-import { Outlet } from 'react-router-dom';
-import { Suspense } from 'react';
+// import { Outlet } from 'react-router-dom';
+// import { Suspense } from 'react';
 import css from './Layout.module.css';
 
-export const Layout = () => {
-  return (
-    <div>
-      <Suspense>
-        <Outlet />
-      </Suspense>
-    </div>
-  );
+export const Layout = ({ children }) => {
+  return <main className={css.container}>{children}</main>;
 };
